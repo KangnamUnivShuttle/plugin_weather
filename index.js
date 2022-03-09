@@ -4,7 +4,7 @@ const app = express()
 const axios = require('axios');
 const port = 15000
 
-app.get('/chat', (req, res) => {
+app.post('/chat', (req, res) => {
 
     const errorResponse = {
         "version": "2.0",
