@@ -18,12 +18,13 @@ afterAll((done) => {
 });
 
 describe("Test the root path", () => {
-  test("It should response the GET method", done => {
-    agent
-      .post("/chat")
-      .then(response => {
-        expect(response.statusCode).toBe(200);
-        done();
-      });
+    test("It should response the GET method", async () => {
+      const response = await agent.post('/chat');
+      expect(response.statusCode).toBe(200);
+      const data = response.body
+      expect(data.version).toBe('2.0')
+      expect(data.template.outputs.length).toBe(1)
+      expect(data.template.outputs[0].listCard.items.length).toBe(4)
+      expect(data.template.quickReplies.length).toBe(1)
+    });
   });
-});
