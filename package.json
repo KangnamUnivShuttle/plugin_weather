@@ -4,8 +4,8 @@
   "description": "Simple weather plugin",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/server.js",
+    "test": "jest --forceExit --coverage --verbose --config ./jest.config.json --detectOpenHandles --maxWorkers=1"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,11 @@
     "express": "^4.17.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "superagent": "^7.1.1",
+    "supertest": "^6.2.2"
   }
 }
