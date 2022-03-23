@@ -3,7 +3,6 @@ require('dotenv').config()
 const app = express()
 // const server = require('http').Server(app);
 const axios = require('axios');
-const port = 15000
 
 app.post('/chat', (req, res) => {
 

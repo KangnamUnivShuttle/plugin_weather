@@ -7,5 +7,5 @@ RUN [ "git", "clone", "https://github.com/KangnamUnivShuttle/plugin_weather.git"
 WORKDIR /home/testuser/app
 RUN [ "npm", "i" ]
 COPY ecosystem.config.js ./
-EXPOSE 3000/tcp
+EXPOSE 15000/tcp
 CMD [ "pm2-runtime", "start", "ecosystem.config.js", "--env", "production" ]
