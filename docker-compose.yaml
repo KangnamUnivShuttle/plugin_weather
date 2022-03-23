@@ -3,15 +3,15 @@ networks:
   infra_chatbot:
     external: true
 services:
-  plugin_node:
-    image: asdfasdf
+  plugin_weather_1:
+    image: plugin_weather
     build: ./
-    container_name: asdfasdf
+    container_name: plugin_weather_1
     restart: always
     networks:
       - infra_chatbot
-    ports:
-      - '10000:3000'
+    env_file:
+      - .env
     deploy:
       resources:
         limits:
